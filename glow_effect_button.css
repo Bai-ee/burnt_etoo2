@@ -1,0 +1,76 @@
+
+.glow-hover:after  {
+    content: "";
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+    height: 100%;
+    width: 100%;
+    margin: 0 auto;
+    pointer-events: none;
+}
+
+#glow-hover-play:after {
+    position: absolute;
+    transform: scale(var(--glow-play-scale));
+    -webkit-filter: blur(var(--glow-play-blur));
+    -moz-filter: blur(var(--glow-play-blur));
+    -ms-filter: blur(var(--glow-play-blur));
+    filter: blur(var(--glow-play-blur));
+    background: linear-gradient(var(--glow-play-degree), var(--glow-play-1-col), var(--glow-play-2-col));
+    background-size: 200% 200%;
+}
+
+#glow-hover-play:hover:after {
+    transform: scale(var(--glow-play-hover-scale));
+    -webkit-filter: blur(var(--glow-play-hover-blur));
+    -moz-filter: blur(var(--glow-play-hover-blur));
+    -ms-filter: blur(var(--glow-play-hover-blur));
+    filter: blur(var(--glow-play-hover-blur));
+    background: linear-gradient(var(--glow-play-hover-degree), var(--glow-play-hover-1-col), var(--glow-play-hover-2-col));
+}
+
+#glow-hover-stop:after {
+    position: absolute;
+    transform: scale(var(--glow-stop-scale));
+    -webkit-filter: blur(var(--glow-stop-blur));
+    -moz-filter: blur(var(--glow-stop-blur));
+    -ms-filter: blur(var(--glow-stop-blur));
+    filter: blur(var(--glow-stop-blur));
+    background: linear-gradient(var(--glow-stop-degree), var(--glow-stop-1-col), var(--glow-stop-2-col));
+    background-size: 200% 200%;
+}
+
+#glow-hover-stop:hover:after {
+    transform: scale(var(--glow-stop-hover-scale));
+    -webkit-filter: blur(var(--glow-stop-hover-blur));
+    -moz-filter: blur(var(--glow-stop-hover-blur));
+    -ms-filter: blur(var(--glow-stop-hover-blur));
+    filter: blur(var(--glow-stop-hover-blur));
+    background: linear-gradient(var(--glow-stop-hover-degree), var(--glow-stop-hover-1-col), var(--glow-stop-hover-2-col));
+    background-size: 200% 200%;
+}
+
+#glow-hover-download:after{
+    position: absolute;
+    transform: scale(var(--glow-download-scale));
+    -webkit-filter: blur(var(--glow-download-blur));
+    -moz-filter: blur(var(--glow-download-blur));
+    -ms-filter: blur(var(--glow-download-blur));
+    filter: blur(var(--glow-download-blur));
+    background: linear-gradient(var(--glow-download-degree), var(--glow-download-1-col), var(--glow-download-2-col));
+    background-size: 200% 200%;
+}
+
+#glow-hover-download:hover:after{
+    transform: scale(var(--glow-download-hover-scale));
+    -webkit-filter: blur(var(--glow-download-hover-blur));
+    -moz-filter: blur(var(--glow-download-hover-blur));
+    -ms-filter: blur(var(--glow-download-hover-blur));
+    filter: blur(var(--glow-download-hover-blur));
+    background: linear-gradient(var(--glow-download-hover-degree), var(--glow-download-hover-1-col), var(--glow-download-hover-2-col));
+}
+
+
+ 
