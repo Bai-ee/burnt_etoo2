@@ -19,12 +19,12 @@ function removeAlert(){
     gsap.to('#wrapper', {opacity:1, duration: 0.2});
 }
 
-function purchase(){
-    createAlert();
-    gsap.to('#wrapper', {opacity:0.1, duration: 0.1});
-}
+// function purchase(){
+//     createAlert();
+//     gsap.to('#wrapper', {opacity:0.1, duration: 0.1});
+// }
 
-document.getElementById("purchase").addEventListener("click", purchase);
+// document.getElementById("purchase").addEventListener("click", purchase);
 document.getElementById("flipMe").addEventListener("click", removeAlert);
 gsap.set("#alert", {autoAlpha:0})
 gsap.set("#flipMe", {pointerEvents:"auto"});

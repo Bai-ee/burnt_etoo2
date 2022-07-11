@@ -17,11 +17,42 @@ var isOwned = false;
 let playToggle = document.querySelector("#play-toggle");
 let downloadButton = document.querySelector("#download");
 let purchaseElement = document.querySelector("#purchase");
+let playElement = document.querySelector("#play-toggle");
+
 let status = document.querySelector("#status");
 let slider_cont = document.querySelector("#slider_cont");
 
 let presetElements = [];
 let elements = [];
+
+purchaseElement.addEventListener('click', function(){
+    console.log("YES")
+    
+    // body.style.backgroundColor = "red";
+    
+    gsap.fromTo("#body", {backgroundColor:"red", ease: "Power1.easeOut"}, {backgroundColor:"black"});
+    
+    });
+
+    playElement.addEventListener('click', function(){
+        console.log("YES")
+        
+        // body.style.backgroundColor = "red";
+
+        if (playElement.className == "stop") {
+
+            gsap.fromTo("#body", {backgroundColor:"red", ease: "Power1.easeOut"}, {backgroundColor:"black"});
+        }
+        else {
+
+        gsap.fromTo("#body", {backgroundColor:"green", ease: "Power1.easeOut"}, {backgroundColor:"black"});
+        
+        }
+    });
+
+
+
+   
 
 document.addEventListener("DOMContentLoaded", () => {
     presetElements = document.querySelectorAll(".preset");
@@ -575,5 +606,76 @@ setInterval(() => {
 
 }, 200);
 
-validateToken(viewer, objkt);
+//ORBIX VERIFICATION
+
+async function getTokenOwner(viewer, contract, objkt){
+
+    return new Promise((resolve, reject) => {
+        const url = `https://api.ithacanet.tzkt.io/v1/contracts/${contract}/bigmaps/assets.ledger/keys?key.eq=${objkt}&limit=1&select=value`
+      
+      if (contract && objkt && viewer) {
+
+        fetch(url)
+          .then(response => response.text())
+          .then(resultText => {
+            const resultList = JSON.parse(resultText);
+            if (resultList && resultList.length > 0) {
+              const result = resultList[0];
+              resolve(result);
+            } else {
+              resolve(null);
+            }
+          });
+      } else {
+        resolve(null);
+      }
+    });
+  }
+
+  function handleTokenOwnershipValidated(isOwner) {
+
+    if(isOwner){
+
+      /* this is an example of showing or hiding content based on the token ownership */
+
+      console.log("DOWNLOADS ENABLE")
+
+      downloadButton.style.display = 'block';
+      purchaseElement.style.display = 'none';
+
+    } else {
+
+      console.log("COLLECT TO DOWNLOAD")
+
+      downloadButton.style.display = 'none';
+      purchaseElement.style.display = 'block';
+
+    }
+
+  }
+  
+  document.addEventListener("DOMContentLoaded", async () => {
+
+    const urlParams = new URLSearchParams(window.location.search);
+
+    if (urlParams) {
+        
+      const viewer = urlParams.get('viewer');
+      const contract = urlParams.get('contract');
+      const objkt = urlParams.get('objkt');
+
+      console.log(viewer)
+      console.log(contract)
+      console.log(objkt)
+
+      const owner = await getTokenOwner(viewer, contract, objkt);
+      const isOwner = viewer && owner && viewer === owner;
+
+      console.log(owner)
+      console.log(isOwner)
+
+      handleTokenOwnershipValidated(isOwner);
+    }
+
+  });
 
