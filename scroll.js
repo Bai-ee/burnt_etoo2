@@ -50,7 +50,7 @@ let blobBPath = document.querySelector(".blobBPath");
 let blobB= document.querySelector(".blobb");
 let currentScroll = 0;
 let isScrollingDown = true;
-let tween = gsap.to(".marquee__part", {xPercent: -100, repeat: -1, duration: 10, ease: "linear"}).totalProgress(0.5);
+let tween = gsap.to(".marquee__part", {xPercent: -100, repeat: -1, duration: 30, ease: "linear"}).totalProgress(0.5);
 var hotSpot = document.getElementById("flipMe");
 let nudge = true;
 

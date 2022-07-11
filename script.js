@@ -134,7 +134,7 @@ var activeBufferIndex = -1;
 var renderedBufferIndex = 99;
 
 Tone.loaded().then(function () {
-    status.innerHTML = "Track #2"
+    status.innerHTML = "Master Track"
     playToggle.disabled = false;
     enableElements();
     loadPreset(0);

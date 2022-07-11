@@ -1,6 +1,6 @@
 @font-face {
   font-family: Poppins;
-  src: url(Poppins-Black.otf);
+  src: url(Poppins-Regular.otff);
   }
   @font-face {
     font-family: PoppinsReg;
@@ -14,7 +14,7 @@
   
   @font-face {
   font-family: Randhu;
-  src: url(Randhu.otf);
+  src: url(Poppins-Regular.otf);
   }
   
   /* input:focus, textarea:focus {
@@ -1311,7 +1311,9 @@
       padding-top:0px;
       position: relative;
       overflow: hidden;
-      bottom: 0px;
+      bottom: 19px;
+      font-family:digitalism;
+      letter-spacing:3px;
     }
     
     .marquee__inner {
@@ -1368,9 +1370,7 @@
     }
   
     button:is(.close, #flipMe){
-      position: absolute;
-      top: -11px;
-      /* left: -30px; */
+      position: relative;
       width: 20px;
       height: 20px;
       background-size: cover;
@@ -1390,7 +1390,7 @@
     }
   
     button:is(#flipMe_return){
-      position: absolute;
+      position: relative;
       margin-top:211px;
       /* top: 9px;
       left: 10px; */
@@ -1413,9 +1413,9 @@
     }
   
     button:is(#flipMe_return_direx){
-      position: absolute;
-      top: 9px;
-      left: -3px;
+      position: relative;
+      /* top: 11px;
+      left: -98px; */
       width: 23px;
       height: 23px;
       background-size: cover;
@@ -1431,9 +1431,8 @@
       cursor: pointer;
       border: none;
       background-color: transparent;
-      top: -9px;
-      left: -8px;
-  
+      top: 14px;
+      left: -134px;
     }
   
     #flipMe  {
@@ -1472,8 +1471,9 @@
       min-height:23;
       max-width:30px;
       max-height:30px;
-      margin-left:auto;
-      margin-right:auto;
+      position: relative;
+      /* margin-left:auto;
+      margin-right:auto; */
     /* top: 309px !important;
     left: 190px  !important; */
     }
@@ -1500,12 +1500,13 @@
   
     #flipMe_return_direx {
       opacity: 0;
+      position: static;
     }
   
     #flipMe {
-      position: absolute;
-      top: -8px;
-      left: -9px;
+      position: relative;
+      top: 28px;
+      left: -134px;
       width: 55px;
       height: 54px;
       background-size: cover;
@@ -1692,6 +1693,18 @@
       #footer,
       #progress_cont{
         display: none;
+      }
+
+      #flipMe {
+        /* top: 15px;
+    left: 13px; */
+      
+      }
+
+      #flipMe_return_direx {
+    /* top: -9px;
+    left: 22px; */
+}
       }
     }
   
