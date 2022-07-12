@@ -23,10 +23,10 @@ const wrapVal = gsap.utils.wrap(0, wrapWidth);
 const endRot = 180;
 
 const startAnim = gsap.to("#circle", {
-  rotation: "+=360", 
-  ease: "power1.in", 
-  duration: 0.5, 
-  onComplete: () => loopAnim.play()
+  // rotation: "+=360", 
+  // ease: "power1.in", 
+  // duration: 0.5, 
+  // onComplete: () => loopAnim.play()
 });
 let ready = false;
 const loopAnim = gsap.to("#circle", {
