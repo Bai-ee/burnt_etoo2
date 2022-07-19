@@ -75,18 +75,22 @@ _\/\\\///////////____/\\\/////////\\\_\///////\\\/////___________________/\\\///
   </style>
 </head>
 <body id="body">
-  <div id="alert">
+
+  <button id="flipMe" onclick="toggle()"></button>
+  <button id="flipMe_return_direx" onclick="toggle()"></button>
+
+  <!-- <div id="alert">
     <div id="flipMe" style="visibility:hidden;" class="flipMePointer" ></div>
     <div class="alert_text"></div>
-  </div>
+  </div> -->
   <div id="circle" loop=infinite ></div>
   <div id="stageBlock"></div>
   <div id="content">
   <!-- <button id="flipMe_return_direx" onclick="toggle()"></button> -->
   <div id="wrapper_cont">   
-    
+    <!-- <button id="flipMe_return_direx" onclick="toggle()"></button> -->
     <div id="wrapper_back">
-      <button id="flipMe_return_direx" onclick="toggle()"></button>
+
       <div id="content_back" class="cardBack">
         <!-- <button id="flipMe_return"></button> -->
         <div id="content_back_img" onclick="toggle()"></div>
@@ -99,50 +103,55 @@ _\/\\\///////////____/\\\/////////\\\_\///////\\\/////___________________/\\\///
         <div id="wrapper_bg" style="justify-content: center;">
           <div class="loader loader--style4" title="3"></div>
         </div>
-        <button id="flipMe" onclick="toggle()"></button>
-        <div id="top_cont">
-          <div id="header">
-            <a id="info_cta" class="info_cta" href="http://edittrax.nft" target="_blank"></a>
-          </div>
-          <section class="marquee">
-            <div class="marquee__inner" aria-hidden="true" ref="inner">
-              <div class="marquee__part">
-                1.LOAD AN EDIT OR START FROM ZERO  &nbsp;&nbsp;2.EDIT ARRANGEMENTS BY ADJUSTING LOOP VALUES  &nbsp;&nbsp;3.PREVIEW THE MASTER TRACK &nbsp;&nbsp;4.UNLOCK UNLIMITED .WAV FILE DOWNLOADS WHEN COLLECTING IN YOUR WALLET&nbsp;&nbsp;
-              </div>
-              <div class="marquee__part">
-                1.LOAD AN EDIT OR START FROM ZERO  &nbsp;&nbsp;2.EDIT ARRANGEMENTS BY ADJUSTING LOOP VALUES  &nbsp;&nbsp;3.PREVIEW THE MASTER TRACK &nbsp;&nbsp;4.UNLOCK UNLIMITED .WAV FILE DOWNLOADS WHEN COLLECTING IN YOUR WALLET&nbsp;&nbsp;
-              </div>             
-              <div class="marquee__part">
-                1.LOAD AN EDIT OR START FROM ZERO  &nbsp;&nbsp;2.EDIT ARRANGEMENTS BY ADJUSTING LOOP VALUES  &nbsp;&nbsp;3.PREVIEW THE MASTER TRACK &nbsp;&nbsp;4.UNLOCK UNLIMITED .WAV FILE DOWNLOADS WHEN COLLECTING IN YOUR WALLET&nbsp;&nbsp;
-              </div>
-              <div class="marquee__part">
-                1.LOAD AN EDIT OR START FROM ZERO  &nbsp;&nbsp;2.EDIT ARRANGEMENTS BY ADJUSTING LOOP VALUES  &nbsp;&nbsp;3.PREVIEW THE MASTER TRACK &nbsp;&nbsp;4.UNLOCK UNLIMITED .WAV FILE DOWNLOADS WHEN COLLECTING IN YOUR WALLET&nbsp;&nbsp;
-              </div>
-              <div class="marquee__part">
-                1.LOAD AN EDIT OR START FROM ZERO  &nbsp;&nbsp;2.EDIT ARRANGEMENTS BY ADJUSTING LOOP VALUES  &nbsp;&nbsp;3.PREVIEW THE MASTER TRACK &nbsp;&nbsp;4.UNLOCK UNLIMITED .WAV FILE DOWNLOADS WHEN COLLECTING IN YOUR WALLET&nbsp;&nbsp;
-              </div>
-              <div class="marquee__part">
-                1.LOAD AN EDIT OR START FROM ZERO  &nbsp;&nbsp;2.EDIT ARRANGEMENTS BY ADJUSTING LOOP VALUES  &nbsp;&nbsp;3.PREVIEW THE MASTER TRACK &nbsp;&nbsp;4.UNLOCK UNLIMITED .WAV FILE DOWNLOADS WHEN COLLECTING IN YOUR WALLET&nbsp;&nbsp;
-              </div>
-              <div class="marquee__part">
-                1.LOAD AN EDIT OR START FROM ZERO  &nbsp;&nbsp;2.EDIT ARRANGEMENTS BY ADJUSTING LOOP VALUES  &nbsp;&nbsp;3.PREVIEW THE MASTER TRACK &nbsp;&nbsp;4.UNLOCK UNLIMITED .WAV FILE DOWNLOADS WHEN COLLECTING IN YOUR WALLET&nbsp;&nbsp;
-              </div>
-              <div class="marquee__part">
-                1.LOAD AN EDIT OR START FROM ZERO  &nbsp;&nbsp;2.EDIT ARRANGEMENTS BY ADJUSTING LOOP VALUES  &nbsp;&nbsp;3.PREVIEW THE MASTER TRACK &nbsp;&nbsp;4.UNLOCK UNLIMITED .WAV FILE DOWNLOADS WHEN COLLECTING IN YOUR WALLET&nbsp;&nbsp;
-              </div>
+        <!-- <button id="flipMe" onclick="toggle()"></button> -->
 
+
+      <div id="top_cont">
+
+        <div id="header">
+          <a id="info_cta" class="info_cta" href="http://edittrax.nft" target="_blank"></a>
+        </div>
+
+        <section class="marquee">
+          <div class="marquee__inner" aria-hidden="true" ref="inner">
+            <div class="marquee__part">
+              1) SELECT AN EDIT OF BAI-EE'S "BURNT" OR START FROM ZERO... &nbsp;&nbsp;2) EDIT THE TRACK BY ADJUSTING HOW MANY TIMES EACH LOOP PLAYS... &nbsp;&nbsp;3) PREVIEW YOUR EDIT BY PLAYING THE MASTER TRACK... &nbsp;&nbsp;4) COLLECT TO UNLOCK UNLIMITED DOWNLOADS (.WAV)&nbsp;&nbsp;
             </div>
-          </section>
-          <div id ="preset_cont">
-            <!-- <div id="pre2" class="labels" for="preset1" style="margin-top:0px">SELECT </div> -->
-            <div id="presets">
-              <div id="preset_img_1" data-value="0" class="preset active"></div>
-              <div id="preset_img_2" data-value="1" class="preset"></div>
-              <div id="preset_img_3" data-value="2" class="preset"></div>
-              <div id="preset_img_4" data-value="3" class="preset"></div>
+            <div class="marquee__part">
+              1) SELECT AN EDIT OF BAI-EE'S "BURNT" OR START FROM ZERO... &nbsp;&nbsp;2) EDIT THE TRACK BY ADJUSTING HOW MANY TIMES EACH LOOP PLAYS... &nbsp;&nbsp;3) PREVIEW YOUR EDIT BY PLAYING THE MASTER TRACK... &nbsp;&nbsp;4) COLLECT TO UNLOCK UNLIMITED DOWNLOADS (.WAV)&nbsp;&nbsp;
             </div>
+            <div class="marquee__part">
+              1) SELECT AN EDIT OF BAI-EE'S "BURNT" OR START FROM ZERO... &nbsp;&nbsp;2) EDIT THE TRACK BY ADJUSTING HOW MANY TIMES EACH LOOP PLAYS... &nbsp;&nbsp;3) PREVIEW YOUR EDIT BY PLAYING THE MASTER TRACK... &nbsp;&nbsp;4) COLLECT TO UNLOCK UNLIMITED DOWNLOADS (.WAV)&nbsp;&nbsp;
+            </div>
+            <div class="marquee__part">
+              1) SELECT AN EDIT OF BAI-EE'S "BURNT" OR START FROM ZERO... &nbsp;&nbsp;2) EDIT THE TRACK BY ADJUSTING HOW MANY TIMES EACH LOOP PLAYS... &nbsp;&nbsp;3) PREVIEW YOUR EDIT BY PLAYING THE MASTER TRACK... &nbsp;&nbsp;4) COLLECT TO UNLOCK UNLIMITED DOWNLOADS (.WAV)&nbsp;&nbsp;
+            </div>
+            <div class="marquee__part">
+              1) SELECT AN EDIT OF BAI-EE'S "BURNT" OR START FROM ZERO... &nbsp;&nbsp;2) EDIT THE TRACK BY ADJUSTING HOW MANY TIMES EACH LOOP PLAYS... &nbsp;&nbsp;3) PREVIEW YOUR EDIT BY PLAYING THE MASTER TRACK... &nbsp;&nbsp;4) COLLECT TO UNLOCK UNLIMITED DOWNLOADS (.WAV)&nbsp;&nbsp;
+            </div>
+            <div class="marquee__part">
+              1) SELECT AN EDIT OF BAI-EE'S "BURNT" OR START FROM ZERO... &nbsp;&nbsp;2) EDIT THE TRACK BY ADJUSTING HOW MANY TIMES EACH LOOP PLAYS... &nbsp;&nbsp;3) PREVIEW YOUR EDIT BY PLAYING THE MASTER TRACK... &nbsp;&nbsp;4) COLLECT TO UNLOCK UNLIMITED DOWNLOADS (.WAV)&nbsp;&nbsp;
+            </div>
+            <div class="marquee__part">
+              1) SELECT AN EDIT OF BAI-EE'S "BURNT" OR START FROM ZERO... &nbsp;&nbsp;2) EDIT THE TRACK BY ADJUSTING HOW MANY TIMES EACH LOOP PLAYS... &nbsp;&nbsp;3) PREVIEW YOUR EDIT BY PLAYING THE MASTER TRACK... &nbsp;&nbsp;4) COLLECT TO UNLOCK UNLIMITED DOWNLOADS (.WAV)&nbsp;&nbsp;
+            </div>
+            
+
+          </div>
+        </section>
+
+        <div id ="preset_cont">
+          <!-- <div id="pre2" class="labels" for="preset1" style="margin-top:0px">SELECT </div> -->
+          <div id="presets">
+            <div id="preset_img_1" data-value="0" class="preset active"></div>
+            <div id="preset_img_2" data-value="1" class="preset"></div>
+            <div id="preset_img_3" data-value="2" class="preset"></div>
+            <div id="preset_img_4" data-value="3" class="preset"></div>
           </div>
         </div>
+
+      </div>
+
         <div id="cont_slider_boxes" style="position: relative;">
           <div id="slider_cont">
             <div id="slider_bg"></div>
@@ -172,8 +181,8 @@ _\/\\\///////////____/\\\/////////\\\_\///////\\\/////___________________/\\\///
             <div id="status">Loading...</div>
             <div id="totalDuration"></div>
             <div class="repeat-container">
-              <div id="trackRepeat" style="color:white;" class="repeat">1</div>
-              <p  style="color:white;" class="repeat-text">Loop</p>
+              <div id="trackRepeat" style="color:white;" class="repeat master_repeat">1</div>
+              <p  style="color:white;" class="repeat-text master_repeat">Loop</p>
             </div>
             <div class="loopinteract">
               <button id="masterUp" class="up loopinteraction" data-index="99"></button>
@@ -181,8 +190,8 @@ _\/\\\///////////____/\\\/////////\\\_\///////\\\/////___________________/\\\///
             </div>
             <a href="" id="download-link"></a>
           </div>
-          <div id="footer">
-          </div>
+          <!-- <div id="footer">
+          </div> -->
         </div>
         <div class="viewport"></div>
       </div>

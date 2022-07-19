@@ -26,18 +26,13 @@ let presetElements = [];
 let elements = [];
 
 purchaseElement.addEventListener('click', function(){
-    console.log("YES")
-    
-    // body.style.backgroundColor = "red";
     
     gsap.fromTo("#body", {backgroundColor:"red", ease: "Power1.easeOut"}, {backgroundColor:"black"});
     
     });
 
     playElement.addEventListener('click', function(){
-        console.log("YES")
-        
-        // body.style.backgroundColor = "red";
+
 
         if (playElement.className == "stop") {
 
@@ -169,8 +164,8 @@ Tone.loaded().then(function () {
     playToggle.disabled = false;
     enableElements();
     loadPreset(0);
-    console.log("Tone loaded");
-    console.log("LFG");
+
+
 });
 
 function loadPreset(index) {
@@ -335,9 +330,9 @@ function scrollToPart(idx){
 
 function goToFirst() {
     lastIndex = 0;
-    scrollToPart(0);
+    // scrollToPart(0);
     setTogglePlayGlowAndPartsActive();
-    TweenLite.set(draggableSlider[0].target, {y:0, onUpdate:draggableSlider[0].update, onUpdateScope:draggableSlider[0]});
+    // TweenLite.set(draggableSlider[0].target, {y:0, onUpdate:draggableSlider[0].update, onUpdateScope:draggableSlider[0]});
 }
 
 playToggle.dataset.index = renderedBufferIndex;
@@ -404,11 +399,11 @@ function formatDuration(duration) {
 }
 
 function pointerEventsOn(){
-    gsap.set("#flipMe, #flipMe_return, #flipMe_return_direx", {pointerEvents:"auto"});
+    gsap.set("#flipMe, #flipMe_return_direx", {pointerEvents:"auto"});
 }
 
 function pointerEventsOff(){
-    gsap.set("#flipMe, #flipMe_return, #flipMe_return_direx", {pointerEvents:"none"});
+    gsap.set("#flipMe, #flipMe_return_direx", {pointerEvents:"none"});
 }
 
 function preview() {
@@ -443,69 +438,24 @@ function toggle() {
 
         pointerEventsOff();
 
-        // console.log("if");
-        // console.log(testBool);
-        // console.log(showDirections);
-
-
         gsap.set("#flipMe", {pointerEvents:"none", autoAlpha:0, visibility:"hidden"});
-
-        // pointerEventsOff();
-        // console.log("else if")
-        // gsap.set(".flipMePointer", {pointerEvents:"none"});
-        gsap.to("#flipMe_return", {duration:0, autoAlpha:0});
 
         tlFlipCard.play();
         gsap.set("#content_back_img", {autoAlpha:0});  
         gsap.set("#content_back_img_direx", {autoAlpha:1});  
         gsap.to("#flipMe_return_direx", {duration:0.5, opacity:1, delay:.5,visibility:"visible", onComplete:pointerEventsOn});
 
-
-
-        // gsap.set("#flipMe", {visibility:"hidden"});
-        // console.log("toggle 1");
-        // gsap.set(".flipMePointer", {pointerEvents:"none"});
-        // tlFlipCard.play();
-        // gsap.set("#content_back_img", {autoAlpha:1});
-        // // gsap.to("#flipMe", {duration:0.5, opacity:1, delay:delay,visibility:"visible"});
-        // gsap.fromTo("#content_back_img, #flipMe_return", {opacity:0, autoAlpha:0,y:0,visibility:"visible"},{duration:1, autoAlpha:1,y:0, opacity:1, delay:0.5,ease: "Power1.easeOut"});
-        // showDirections = true;
-
     } 
     else if ((testBool == true) && (showDirections == true)) {
-
-        // console.log("else if");
-        // console.log(testBool);
-        // console.log(showDirections);
-
-        // console.log("toggle 2");
-        // gsap.set("#flipMe", {visibility:"visible"});
-        // pointerEventsOff();
-        // // console.log("else if")
-        // gsap.set(".flipMePointer", {pointerEvents:"none"});
-        // gsap.to("#flipMe_return", {duration:0.5, autoAlpha:0});
-
-        // tlFlipCard.play();
-        // gsap.set("#content_back_img", {autoAlpha:0});  
-        // gsap.set("#content_back_img_direx", {autoAlpha:1});  
-        // gsap.to("#flipMe_return_direx", {duration:0.5, delay:delay, autoAlpha:1});
-
-        // gsap.to("#flipMe", {opacity:0, visibility:"hidden"});
-
 
     } 
     else {
 
         pointerEventsOff();
 
-        // console.log("else");
-        // console.log(testBool);
-        // console.log(showDirections);
-
         gsap.set("#flipMe_return_direx", {pointerEvents:"none", autoAlpha:0, visibility:"hidden"});
 
         gsap.set("#flipMe", {visibility:"visible"});
-        console.log("toggle 3");
         pointerEventsOff();
         // gsap.set(".flipMePointer", {pointerEvents:"auto"});
 
@@ -632,20 +582,35 @@ async function getTokenOwner(viewer, contract, objkt){
     });
   }
 
+
+console.log("///////ABOUT:")
+console.log("• EditTrax.NFT: Open source interactive music collectible with token gate and direct download mechanism.")
+
+console.log("////////RIGHTS:")
+console.log("• Original artist retains all creative rights to downloaded material.")
+console.log("• Collectors are fully encouraged to use .wav file in mix tapes, social content and public performances.")
+console.log("• Collectors are not allowed to distribute or repackage for direct sale or distribution in any way.")
+console.log("• Collector will assume no other rights.")
+// console.log("")
+// console.log("")
+// console.log("")
   function handleTokenOwnershipValidated(isOwner) {
 
     if(isOwner){
-
+        // console.log("")
       /* this is an example of showing or hiding content based on the token ownership */
 
-      console.log("DOWNLOADS ENABLE")
+      console.log("• Owner Verified: Downloads Enabled")
+
+    //   console.log("• Downloads Enabled")
 
       downloadButton.style.display = 'block';
       purchaseElement.style.display = 'none';
 
     } else {
+        // console.log("")
 
-      console.log("COLLECT TO DOWNLOAD")
+        console.log("• Owner Not Verified: Collect to Unlock Downloads")
 
       downloadButton.style.display = 'none';
       purchaseElement.style.display = 'block';
@@ -659,20 +624,29 @@ async function getTokenOwner(viewer, contract, objkt){
     const urlParams = new URLSearchParams(window.location.search);
 
     if (urlParams) {
+
+        
         
       const viewer = urlParams.get('viewer');
       const contract = urlParams.get('contract');
       const objkt = urlParams.get('objkt');
 
+      console.log("////////VERIFYING OWNER...")
+      console.log("VIEWER:")
       console.log(viewer)
+      console.log("CONTRACT:")
       console.log(contract)
+      console.log("OBJKT:")
       console.log(objkt)
 
       const owner = await getTokenOwner(viewer, contract, objkt);
       const isOwner = viewer && owner && viewer === owner;
 
+      console.log("OWNER:")
       console.log(owner)
+      console.log("CONFIRMING:")
       console.log(isOwner)
+
 
       handleTokenOwnershipValidated(isOwner);
     }

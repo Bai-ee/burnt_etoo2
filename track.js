@@ -196,18 +196,6 @@ presets.push([
     0,0,0,0,0
 ]);
 
-// console.log("PRODUCER: SLUM GOD")
-// console.log("LABEL: Housepit CHI | HPIT.info")
-console.log("DEVELOPER: Bryan (Bai-ee) Balli")
-console.log("ABOUT: EditTrax is a collectable digital audio workstation NFT that allows for the non-destructive editing, rendering, and direct downloading of audio .wav files.")
-console.log("LIMITATIONS:")
-
-console.log("• DOWNLOADS ENABLED IN SAFARI BROWSERS ONLY. MUST BE VIEWING ON HICETNUNC")
-console.log("• Original artist retains all creative rights to any edit created and downloaded")
-console.log("• You are fully encouraged to use downloaded edits in your mix tapes, social content creation and public performances")
-console.log("• You are not allowed to distribute downloaded edits for direct sale or distribution in any way")
-console.log("CONTACT: edittrax@protonmail.com")
-console.log("WEB: EditTrax.nft | .com")
 
 
 const downloadName = "Bai-ee_(A_Great_Gift).wav"

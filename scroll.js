@@ -50,7 +50,7 @@ let blobBPath = document.querySelector(".blobBPath");
 let blobB= document.querySelector(".blobb");
 let currentScroll = 0;
 let isScrollingDown = true;
-let tween = gsap.to(".marquee__part", {xPercent: -100, repeat: -1, duration: 30, ease: "linear"}).totalProgress(0.5);
+let tween = gsap.to(".marquee__part", {xPercent: -100, repeat: -1, duration: 40, ease: "linear"}).totalProgress(0.5);
 var hotSpot = document.getElementById("flipMe");
 let nudge = true;
 
@@ -77,7 +77,7 @@ document.addEventListener("DOMContentLoaded", () => {
   mainTimline();
 
   boxes.onmousewheel = () =>{return false;}
-  // console.log("init scroll");
+
 });
 
 function initMediaPlayer(){
@@ -298,7 +298,6 @@ function initTimeline(){
   gsap.set(".marquee__inner", {xPercent: -50});
   gsap.set("#wrapper", {width:300, height:250, autoAlpha:1});
   gsap.set("#wrapper_bg", {autoAlpha:0});
-  gsap.set("#flipMe_return", {autoAlpha:0});
   gsap.set("#flipMe_return_direx", {autoAlpha:0});
   gsap.set("#content_back_img_direx", {autoAlpha:0});
   gsap.set("#stageBlock", {autoAlpha:1}); 
@@ -322,7 +321,7 @@ function mainTimline() {
 
   document.getElementById('wrapper_bg').style.display = "none";
   nudge = null;
-  gsap.to("#slider_cont",{duration:0.25, autoAlpha:1, delay:3.5, oncomplete: () => {
+  gsap.to("#slider_cont",{duration:0.25, autoAlpha:1, delay:0, oncomplete: () => {
     setSliderVisibility();
     initialSliderPositionAndBounds();
   }});
@@ -342,12 +341,12 @@ function mouseClickPlayer(){
   tlExpand.to("#preview", {duration:0.25, autoAlpha:0},0)
   tlExpand.to("#wrapper", {duration:0.25, height:"100%", width:"100%", ease:"Power1.easeOut"},0)
   tlExpand.to('.loader, #wrapper_bg p', {duration:0.25,opacity: 0});
-  tlExpand.to("#header, #presets, #pre2, #boxes_cont, #master_controls, #progress_cont, .marquee, #footer, #slider_cont", {duration:3, stagger:0.2, autoAlpha:1, delay:2, ease:"Power4.easeInOut"},1);
+  tlExpand.to("#header, #presets, #pre2, #boxes_cont, #master_controls, #progress_cont, .marquee, #footer", {duration:3, stagger:0.2, autoAlpha:1, delay:2, ease:"Power4.easeInOut"},1);
   tlStageBlock.seek("myLabel");
 
   document.getElementById('wrapper_bg').style.display = "none";
   nudge = null;
-  gsap.to("#slider_cont",{duration:1, autoAlpha:1, delay:2, oncomplete: () => {
+  gsap.to("#slider_cont",{duration:1, autoAlpha:1, delay:0, oncomplete: () => {
     setSliderVisibility();
     initialSliderPositionAndBounds();
   }});

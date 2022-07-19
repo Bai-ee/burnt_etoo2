@@ -24,14 +24,14 @@
     /*ALERT*/
     --alert-width: 450px;
     --alert-height: 250px;
-    --slider-size: 5px;
+    --slider-size: 20px;
     --alert-bg-color:white;
     --alert-bg-image:url("unlock_message.svg");
 
     /*COLORS*/
     --primary: black;
     --secondary: rgb(0, 0, 0);
-    --progress-color: #00ff2a;
+    --progress-color:  #E5660B;
 
     /*STAGE BACKGROUND*/ 
     --img-bg: url("bg.png");
@@ -50,23 +50,23 @@
     /* --img-card-front: url('player_cover_front_OnlyYou.jpg'); */
     /*back*/
     /* --bg-card-bk: rgb(255, 255, 255); */
-    /* --back-bg-image: url('player_cover_OnlyYou.jpg'); */
+    --back-bg-image: url('directions_large.jpg');
 
     /* --back-bg-image-direx:url('directions.svg'); */
     /*slider*/
-    --max_height_slider_boxes:30vh; /* !!! only vh !!!! */
+    --max_height_slider_boxes:40vh; /* !!! only vh !!!! */
     --shadow: 5px 24px 54px rgba(59, 50, 50, 0.5);
     /*size managed in JS*/
     /* --card-init-width: 413px;
     --card-init-height: 678px; */
 
     /*BACK OF CARD*/
-    /* --img-direx-bg-large: url('directions_large.svg');
-    --img-direx-bg-small: url('directions_small.svg'); */
+    --img-direx-bg-large: url('directions_large.jpg');
+    --img-direx-bg-small: url('directions_small.jpg');
 
     /*LOOPS*/
-    --bg-box: white;
-    --notactive-opacity: 1; /* sets opacity of the loops which are not playing */
+    --bg-box: #AC3434;
+
     --active-border: transparent; /* sets color of the loops-border which is playing */
     --boxes_cont_bg: black;
     --boxes_cont_padding: 5px;
@@ -83,7 +83,7 @@
     --txt-master: white;
     --img-master-play: url("master_play.svg");
     --img-master-stop: url("master_stop.svg");
-    --txt_progress_color: black;
+    --txt_progress_color: white;
     --radius-sm:0px;
     --radius-sm-samples:0px;
     
@@ -97,7 +97,7 @@
 
     /*SLIDER*/
     --bg-slider: #232429;
-    --slider: white;
+    --slider: #AC3434;
     --slider-size: 17px;
 
     /*PLAY BUTTONS*/
@@ -131,13 +131,13 @@
     --secondary: #555;
     --progress-color: #E5660B;
     --bg-card: #2324298f;
-    --bg-master: transparent;
+    --bg-master: #AC3434;
     --bg-btn-updown: #33373C;
     --bg-slider: rgb(63, 63, 63);
-    --slider: white;
+    --slider: #AC3434;
     --btn-hover: #6e6e6e;
     --txt: grey;
-    --txt-box: black;
+    --txt-box: white;
     --progress-bg: yellow;
 
     --txt-marquee: white;
@@ -157,8 +157,8 @@
     /* border: solid 0.5px white; */
 
     /*settings*/
-    --notactive-opacity: 0.1; /* sets opacity of the loops which are not playing */
-    --active-border: rgba(0, 0, 0, 0.466); /* sets color of the loops-border which is playing */
+    --notactive-opacity:0.3; of the loops which are not playing */
+    --active-border: white; /* sets color of the loops-border which is playing */
 
     --radius-sm: 0px;
     --radius-md: 0px;
