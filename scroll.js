@@ -1,6 +1,3 @@
-// scroll from https://codepen.io/GreenSock/pen/PoNZxqX
-// forum https://greensock.com/forums/topic/19420-infinite-carousel-with-draggable/
-
 gsap.registerPlugin(CSSRulePlugin, Draggable);
 // patch all methods for scroll polyfill (Safari)
 seamless.polyfill();
@@ -19,14 +16,10 @@ let viewWidth = innerWidth;
 const wrapWidth = numBoxes * boxWidth;
 const wrapVal = gsap.utils.wrap(0, wrapWidth);
 
-//constant animations
-const endRot = 180;
 
+const endRot = 180;
 const startAnim = gsap.to("#circle", {
-  // rotation: "+=360", 
-  // ease: "power1.in", 
-  // duration: 0.5, 
-  // onComplete: () => loopAnim.play()
+
 });
 let ready = false;
 const loopAnim = gsap.to("#circle", {
@@ -43,8 +36,6 @@ const loopAnim = gsap.to("#circle", {
   paused: true
 });
 
-//SELECTORS
-
 let blobapath = document.querySelector(".blobAPath");
 let blobBPath = document.querySelector(".blobBPath");
 let blobB= document.querySelector(".blobb");
@@ -56,7 +47,7 @@ let nudge = true;
 
 document.addEventListener("DOMContentLoaded", () => {
   document.getElementById("preview").addEventListener("click", mouseClickPlayer);
-  //INTERACTIONS
+
   window.addEventListener("scroll", function(){
     if ( window.pageYOffset > currentScroll ) {
       isScrollingDown = true;
@@ -273,7 +264,7 @@ function initMediaPlayer(){
     gsap.set(box, { x: i * boxWidth, width: boxWidth, height: boxHeight });
 
   }
-  // console.log("init media Player");
+
 }
 
 function updateProgress() {
@@ -284,9 +275,7 @@ function resize() {
   viewWidth = viewport.offsetWidth;
 }
 
-//TIMELINES
 function initTimeline(){
-  //SET TWEENS
   gsap.set("#circle", {autoAlpha:0, zIndex:-10})
   gsap.set("#vivaLogo, #header, #presets, #boxes_cont, #master_controls, .marquee, #footer", {autoAlpha:0});
   gsap.set("#header, #info_cta, #progress_cont, #pre2, #slider_cont", {autoAlpha:0});
@@ -312,12 +301,9 @@ function mainTimline() {
   tlStageBlock.to("#stageBlock", {duration:2, autoAlpha:0},0);
   tlStageBlock.from("#wrapper", {duration:1, autoAlpha:0}),0.5;
   tlStageBlock.to("#circle", {duration:2, autoAlpha:1},2.5);
-  // tlStageBlock.to("#preview", {duration:0.25, autoAlpha:0},4.5);
-
   tlStageBlock.to("#header, #presets, #pre2, #boxes_cont, #cont_slider_boxes, #master_controls, #progress_cont, .marquee, #footer", {duration:3, stagger:0.35, autoAlpha:1, delay:1, ease:"Power4.easeInOut"},.5);
   tlStageBlock.to("#wrapper", {duration:0.25, height:"100%", width:"100%", ease:"Power1.easeOut"},0);
   tlStageBlock.to('.loader, #wrapper_bg p', {duration:0.25,opacity: 0},0);
-  // tlStageBlock.seek("myLabel");
 
   document.getElementById('wrapper_bg').style.display = "none";
   nudge = null;
@@ -335,7 +321,6 @@ function help(){
 var tlExpand = null;
 
 function mouseClickPlayer(){
-
   tlExpand = gsap.timeline();
   tlExpand.timeScale( 2 ); 
   tlExpand.to("#preview", {duration:0.25, autoAlpha:0},0)
@@ -413,7 +398,6 @@ var origin_slider_y = 0;
 var origin_boxes_y = 0;
 function updateBoxesProgress() {
   if(Tone.Transport.state == "started" || player.state == "started"){
-    //while playing ... no draggable boxes
   }else{
     var val = Math.abs(origin_boxes_y - this.y);
     if(this.y > origin_boxes_y) val = val * -1;

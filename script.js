@@ -560,28 +560,32 @@ setInterval(() => {
 
 async function getTokenOwner(viewer, contract, objkt){
 
+    //STEP 2: This NFT creates a URL injected with contract and objkt information.
+    //It sends this URL to the Tezos Blockchain (indexer) via tzkt, returning a response that returns
+    // This URL is 
+    //https://wiki.tezos.com/build/blockchain-indexers/tzkt 
+
     return new Promise((resolve, reject) => {
         const url = `https://api.ithacanet.tzkt.io/v1/contracts/${contract}/bigmaps/assets.ledger/keys?key.eq=${objkt}&limit=1&select=value`
       
-      if (contract && objkt && viewer) {
+        if (contract && objkt && viewer) {
 
-        fetch(url)
-          .then(response => response.text())
-          .then(resultText => {
-            const resultList = JSON.parse(resultText);
-            if (resultList && resultList.length > 0) {
-              const result = resultList[0];
-              resolve(result);
-            } else {
-              resolve(null);
-            }
-          });
-      } else {
-        resolve(null);
-      }
+            fetch(url)
+            .then(response => response.text())
+            .then(resultText => {
+                const resultList = JSON.parse(resultText);
+                if (resultList && resultList.length > 0) {
+                const result = resultList[0];
+                console.log(resultText)
+                console.log(resultList)
+                resolve(result);
+                } else {
+                resolve(null);
+                }
+            });
+            } else {resolve(null);}
     });
   }
-
 
 console.log("///////ABOUT:")
 console.log("• EditTrax.NFT: Open source interactive music collectible with token gate and direct download mechanism.")
@@ -591,42 +595,30 @@ console.log("• Original artist retains all creative rights to downloaded mater
 console.log("• Collectors are fully encouraged to use .wav file in mix tapes, social content and public performances.")
 console.log("• Collectors are not allowed to distribute or repackage for direct sale or distribution in any way.")
 console.log("• Collector will assume no other rights.")
-// console.log("")
-// console.log("")
-// console.log("")
-  function handleTokenOwnershipValidated(isOwner) {
+
+function handleTokenOwnershipValidated(isOwner) {
+
+    /* this is an example of showing or hiding content based on the token ownership */
 
     if(isOwner){
-        // console.log("")
-      /* this is an example of showing or hiding content based on the token ownership */
-
-      console.log("• Owner Verified: Downloads Enabled")
-
-    //   console.log("• Downloads Enabled")
-
-      downloadButton.style.display = 'block';
-      purchaseElement.style.display = 'none';
-
+        console.log("• Owner Verified: Downloads Enabled")
+        downloadButton.style.display = 'block';
+        purchaseElement.style.display = 'none';
     } else {
-        // console.log("")
-
         console.log("• Owner Not Verified: Collect to Unlock Downloads")
-
-      downloadButton.style.display = 'none';
-      purchaseElement.style.display = 'block';
-
+        downloadButton.style.display = 'none';
+        purchaseElement.style.display = 'block';
     }
+}
 
-  }
-  
-  document.addEventListener("DOMContentLoaded", async () => {
+document.addEventListener("DOMContentLoaded", async () => {
 
+    //STEP 1 Fetch VIEWER (Synced Wallet) + CONTRACT (Address) + OBJKT (Token ID) from url populating this NFTs iFrame.
+    //*That url is injected with paramaters by a Web3 Wallet Sync (Beacon Connect SDK).
+    //*The NFT will now parse this information searching its own url.
     const urlParams = new URLSearchParams(window.location.search);
 
     if (urlParams) {
-
-        
-        
       const viewer = urlParams.get('viewer');
       const contract = urlParams.get('contract');
       const objkt = urlParams.get('objkt');
@@ -639,6 +631,8 @@ console.log("• Collector will assume no other rights.")
       console.log("OBJKT:")
       console.log(objkt)
 
+      //STEP 2: SEE FUNCTION ABOVE
+      //Returns contract
       const owner = await getTokenOwner(viewer, contract, objkt);
       const isOwner = viewer && owner && viewer === owner;
 
@@ -647,9 +641,8 @@ console.log("• Collector will assume no other rights.")
       console.log("CONFIRMING:")
       console.log(isOwner)
 
-
       handleTokenOwnershipValidated(isOwner);
     }
 
-  });
+});
 

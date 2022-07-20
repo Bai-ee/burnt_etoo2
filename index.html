@@ -48,9 +48,6 @@ _\/\\\///////////____/\\\/////////\\\_\///////\\\/////___________________/\\\///
 
     <link type="text/css" rel="stylesheet" href="base.css" />
     <link type="text/css" rel="stylesheet" href="style.css" />
-
-    <link type="text/css" rel="stylesheet" href="atomic.css" />
-    <link type="text/css" rel="stylesheet" href="track_visualizer.css" />
 	
     <script src="Tone.js"></script>
     <script src="pts.js"></script>
@@ -78,40 +75,25 @@ _\/\\\///////////____/\\\/////////\\\_\///////\\\/////___________________/\\\///
 
   <button id="flipMe" onclick="toggle()"></button>
   <button id="flipMe_return_direx" onclick="toggle()"></button>
-
-  <!-- <div id="alert">
-    <div id="flipMe" style="visibility:hidden;" class="flipMePointer" ></div>
-    <div class="alert_text"></div>
-  </div> -->
   <div id="circle" loop=infinite ></div>
   <div id="stageBlock"></div>
   <div id="content">
-  <!-- <button id="flipMe_return_direx" onclick="toggle()"></button> -->
   <div id="wrapper_cont">   
-    <!-- <button id="flipMe_return_direx" onclick="toggle()"></button> -->
     <div id="wrapper_back">
-
       <div id="content_back" class="cardBack">
-        <!-- <button id="flipMe_return"></button> -->
         <div id="content_back_img" onclick="toggle()"></div>
         <div id="content_back_img_direx"></div>
       </div>
     </div>
-    <!-- <div id="glow-card" class="glow">      -->
       <div id="wrapper">
         <div id="preview" onclick=toggle()></div>
         <div id="wrapper_bg" style="justify-content: center;">
           <div class="loader loader--style4" title="3"></div>
         </div>
-        <!-- <button id="flipMe" onclick="toggle()"></button> -->
-
-
       <div id="top_cont">
-
         <div id="header">
           <a id="info_cta" class="info_cta" href="http://edittrax.nft" target="_blank"></a>
         </div>
-
         <section class="marquee">
           <div class="marquee__inner" aria-hidden="true" ref="inner">
             <div class="marquee__part">
@@ -135,13 +117,10 @@ _\/\\\///////////____/\\\/////////\\\_\///////\\\/////___________________/\\\///
             <div class="marquee__part">
               1) SELECT AN EDIT OF BAI-EE'S "BURNT" OR START FROM ZERO... &nbsp;&nbsp;2) EDIT THE TRACK BY ADJUSTING HOW MANY TIMES EACH LOOP PLAYS... &nbsp;&nbsp;3) PREVIEW YOUR EDIT BY PLAYING THE MASTER TRACK... &nbsp;&nbsp;4) COLLECT TO UNLOCK UNLIMITED DOWNLOADS (.WAV)&nbsp;&nbsp;
             </div>
-            
-
           </div>
         </section>
 
         <div id ="preset_cont">
-          <!-- <div id="pre2" class="labels" for="preset1" style="margin-top:0px">SELECT </div> -->
           <div id="presets">
             <div id="preset_img_1" data-value="0" class="preset active"></div>
             <div id="preset_img_2" data-value="1" class="preset"></div>
@@ -149,63 +128,57 @@ _\/\\\///////////____/\\\/////////\\\_\///////\\\/////___________________/\\\///
             <div id="preset_img_4" data-value="3" class="preset"></div>
           </div>
         </div>
-
       </div>
 
-        <div id="cont_slider_boxes" style="position: relative;">
-          <div id="slider_cont">
-            <div id="slider_bg"></div>
-            <div id="slider"></div>
-          </div>
-          <div id="boxes_cont" style="">
-            <div class="boxes">
-            </div>
-          </div>
-        </div>        
-        <div id="bottom_cont">
-          <div id="progress_cont">
-            <div id="progress_current">00:00</div>
-            <progress id="progress" value="0" max="100"></progress>
-            <div id="progress_total">00:00</div>
-          </div>
-          <div id="master_controls">
-            <div id ="play_cont">
-              <div id="glow-hover-play" class="glow-hover">
-                <button id="play-toggle" class="play" disabled></button>
-              </div>
-              <div id="glow-hover-download" class="glow-hover">
-                <button id="download"></button>
-                <div id="purchase"></div>
-              </div>
-            </div>
-            <div id="status">Loading...</div>
-            <div id="totalDuration"></div>
-            <div class="repeat-container">
-              <div id="trackRepeat" style="color:white;" class="repeat master_repeat">1</div>
-              <p  style="color:white;" class="repeat-text master_repeat">Loop</p>
-            </div>
-            <div class="loopinteract">
-              <button id="masterUp" class="up loopinteraction" data-index="99"></button>
-              <button id="masterDown" class="down loopinteraction" data-index="99"></button>
-            </div>
-            <a href="" id="download-link"></a>
-          </div>
-          <!-- <div id="footer">
-          </div> -->
+      <div id="cont_slider_boxes" style="position: relative;">
+        <div id="slider_cont">
+          <div id="slider_bg"></div>
+          <div id="slider"></div>
         </div>
-        <div class="viewport"></div>
+        <div id="boxes_cont" style="">
+          <div class="boxes">
+          </div>
+        </div>
+      </div>        
+      <div id="bottom_cont">
+        <div id="progress_cont">
+          <div id="progress_current">00:00</div>
+          <progress id="progress" value="0" max="100"></progress>
+          <div id="progress_total">00:00</div>
+        </div>
+        <div id="master_controls">
+          <div id ="play_cont">
+            <div id="glow-hover-play" class="glow-hover">
+              <button id="play-toggle" class="play" disabled></button>
+            </div>
+            <div id="glow-hover-download" class="glow-hover">
+              <button id="download"></button>
+              <div id="purchase"></div>
+            </div>
+          </div>
+          <div id="status">Loading...</div>
+          <div id="totalDuration"></div>
+          <div class="repeat-container">
+            <div id="trackRepeat" style="color:white;" class="repeat master_repeat">1</div>
+            <p  style="color:white;" class="repeat-text master_repeat">Loop</p>
+          </div>
+          <div class="loopinteract">
+            <button id="masterUp" class="up loopinteraction" data-index="99"></button>
+            <button id="masterDown" class="down loopinteraction" data-index="99"></button>
+          </div>
+          <a href="" id="download-link"></a>
+        </div>
       </div>
-    <!-- </div> -->
+      <div class="viewport"></div>
+    </div>
   </div>
 </div>
   <div>
     <div id="canvas"></div>
   </div>
-    <script src="alert.js"></script>
     <script src="track.js"></script>
     <script src="scroll.js"></script>
     <script src="script.js"></script>
-    <!-- <script src="track_visualizer.js"></script> -->
 </body>
 </html>
 
